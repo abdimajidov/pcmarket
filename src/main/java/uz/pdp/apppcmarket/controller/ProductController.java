@@ -36,10 +36,8 @@ public class ProductController {
     public ResponseEntity<Page<Product>> getProductsFiltr(@RequestParam String name,
                                                      @RequestParam String model,
                                                      @RequestParam String price,
-                                                     @RequestParam Integer chId,
-                                                     @RequestParam Integer page,
-                                                     @RequestParam Integer size){
-        Page<Product> page1=productService.getProductsFiltr(name,model,price,chId,page,size);
+                                                     @RequestParam Integer chId){
+        Page<Product> page1=productService.getProductsFiltr(name,model,price,chId);
         return ResponseEntity.status(page1!=null?202:409).body(page1);
     }
     @GetMapping("/filtr2")

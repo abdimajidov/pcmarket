@@ -10,6 +10,5 @@ public class ProductDto {
     private Integer attachmentId;
     private Integer categoryId;
     private String price;
-    private Integer characterId;
     private boolean active;
 }

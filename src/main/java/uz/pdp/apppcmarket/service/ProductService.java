@@ -95,16 +95,16 @@ public class ProductService {
        }
     }
 
-    public Page<Product> getProductsFiltr(String name, String model, String price, Integer chId, Integer page, Integer size) {
+    public Page<Product> getProductsFiltr(String name, String model, String price, Integer chId) {
         Optional<Character> optionalCharacter = characterRepository.findById(chId);
         if(!optionalCharacter.isPresent()) return null;
-        Pageable pageable=PageRequest.of(page,size);
-        return productRepository.findProductsByNameAndModelAndPriceAndCharacter
-                (name,model,price, optionalCharacter.get(), pageable);
+
+        return productRepository.getProductsbyNameModelCharacterPrice
+                (name,model,price,chId);
     }
 
     public Page<Product> getProductsFiltr2(List<Integer> propertyList) {
         if(propertyList==null) return null;
-        return productRepository.getProducts(propertyList);
+        return productRepository.getProductsbyPropertyList(propertyList);
     }
 }
