@@ -17,4 +17,7 @@ public class Character {
 
     private String name;
 
+    @ManyToOne
+    private Product product;
+
 }

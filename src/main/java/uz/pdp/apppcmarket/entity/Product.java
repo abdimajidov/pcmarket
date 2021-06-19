@@ -27,9 +27,6 @@ public class Product {
 
     private String price;
 
-    @ManyToOne
-    private Character character;
-
     private boolean active;
 
 }

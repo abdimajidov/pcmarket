@@ -47,15 +47,14 @@ public class ProductService {
         if(!optionalAttachment.isPresent()) return new Result("Attachment not found",false);
         Optional<Category> optionalCategory = categoryRepository.findById(productDto.getCategoryId());
         if(!optionalCategory.isPresent()) return new Result("Category not found",false);
-        Optional<Character> byId = characterRepository.findById(productDto.getCharacterId());
-        if(!byId.isPresent()) return  new Result("Character not found",false);
+
 
 
         Product product=new Product();
         product.setActive(productDto.isActive());
         product.setAttachment(optionalAttachment.get());
         product.setCategory(optionalCategory.get());
-        product.setCharacter(byId.get());
+
         product.setPrice(productDto.getPrice());
         product.setModel(productDto.getModel());
         product.setName(productDto.getName());
@@ -71,15 +70,13 @@ public class ProductService {
         if(!optionalAttachment.isPresent()) return new Result("Attachment not found",false);
         Optional<Category> optionalCategory = categoryRepository.findById(productDto.getCategoryId());
         if(!optionalCategory.isPresent()) return new Result("Category not found",false);
-        Optional<Character> byId = characterRepository.findById(productDto.getCharacterId());
-        if(!byId.isPresent()) return  new Result("Character not found",false);
+
 
 
         Product product=optionalProduct.get();
         product.setActive(productDto.isActive());
         product.setAttachment(optionalAttachment.get());
         product.setCategory(optionalCategory.get());
-        product.setCharacter(byId.get());
         product.setPrice(productDto.getPrice());
         product.setModel(productDto.getModel());
         product.setName(productDto.getName());
