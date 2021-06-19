@@ -10,7 +10,7 @@ import java.util.List;
 @Projection(types = BasketProduct.class)
 public interface BasketProductProjection {
     Integer getId();
-    List<Product> getProduct();
+    Product getProduct();
     Integer getCount();
     Double getSumm();
     Basket getBasket();
