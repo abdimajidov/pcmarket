@@ -17,6 +17,4 @@ public class Character {
 
     private String name;
 
-    @ManyToOne
-    private Property property;
 }

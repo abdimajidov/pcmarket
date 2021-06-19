@@ -8,5 +8,4 @@ import uz.pdp.apppcmarket.entity.Property;
 public interface CharacterProjection {
     Integer getId();
     String getName();
-    Property getProperty();
 }

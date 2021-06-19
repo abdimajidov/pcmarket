@@ -7,4 +7,5 @@ import uz.pdp.apppcmarket.entity.Property;
 public interface PropertyProjection {
     Integer getId();
     String getValue();
+    Character getCharacter();
 }
