@@ -40,6 +40,7 @@ public class ProductController {
         Page<Product> page1=productService.getProductsFiltr(name,model,price,chId);
         return ResponseEntity.status(page1!=null?202:409).body(page1);
     }
+
     @GetMapping("/filtr2")
     public ResponseEntity<Page<Product>> getProductsFiltr2(@RequestParam List<Integer> propertyList){
         Page<Product> page=productService.getProductsFiltr2(propertyList);
