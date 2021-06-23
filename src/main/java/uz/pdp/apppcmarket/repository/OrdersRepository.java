@@ -7,4 +7,5 @@ import uz.pdp.apppcmarket.projection.OrdersProjection;
 
 @RepositoryRestResource(path = "orders",excerptProjection = OrdersProjection.class)
 public interface OrdersRepository extends JpaRepository<Orders,Integer> {
+    
 }

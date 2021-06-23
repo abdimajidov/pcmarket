@@ -9,7 +9,7 @@ import uz.pdp.apppcmarket.payLoad.Result;
 import uz.pdp.apppcmarket.service.AttachmentService;
 
 @RestController
-@RequestMapping("/attachment")
+@RequestMapping("/api/attachment")
 public class AttachmentController {
     @Autowired
     AttachmentService attachmentService;
@@ -17,8 +17,7 @@ public class AttachmentController {
     //Create
     @PostMapping("/upload")
     public Result upload(MultipartHttpServletRequest request){
-        Result result = attachmentService.uploadFile(request);
-        return result;
+        return attachmentService.uploadFile(request);
     }
 
     //Read
